@@ -9,8 +9,12 @@ const theme = extendTheme({
   config,
   colors: {
     brand: {
-      100: "#e0e0e6",
-      900: "#191923",
+      50: "#c0c0ca",
+      100: "#f0f0f5",
+      500: "#e0e0e6",
+      600: "#ffc107",
+      900: "#1e1e28",
+      950: "#191923",
     },
   },
 });

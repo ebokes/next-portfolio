@@ -1,3 +1,13 @@
+import {
+  MdClose,
+  MdMenu,
+  MdOutlineMiscellaneousServices,
+} from "react-icons/md";
+import { GoHomeFill } from "react-icons/go";
+import { BiTask, BiSolidMessage } from "react-icons/bi";
+import { IoIosBriefcase } from "react-icons/io";
+import { IconType } from "react-icons";
+
 export const TechStack = [
   {
     title: "Next.js",

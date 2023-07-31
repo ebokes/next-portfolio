@@ -15,6 +15,7 @@ import {
   Link,
   Progress,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import { FaCheck, FaDownload } from "react-icons/fa";
 import { TechStack, TechStack2 } from "../utils/constants";
@@ -44,6 +45,7 @@ const CircularProgressBar = ({ value, label, title }: ProgressBarProps) => {
 };
 
 const ProgressBar = ({ value, label, title }: ProgressBarProps) => {
+  // const { colorMode } = useColorMode();
   return (
     <Box>
       <Box>
@@ -54,7 +56,13 @@ const ProgressBar = ({ value, label, title }: ProgressBarProps) => {
           <Text fontSize={"13px"}>{label}</Text>
         </Flex>
       </Box>
-      <Progress value={value} size={"xs"} isAnimated bg={"#191923"} />
+      <Progress
+        value={value}
+        size={"xs"}
+        isAnimated
+        bg={"#191923"}
+        // bg={colorMode === "light" ? "brand.50" : "brand.950"}
+      />
     </Box>
   );
 };
