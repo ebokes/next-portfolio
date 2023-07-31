@@ -1,0 +1,27 @@
+ {/* <Box>
+            <Flex justify={"space-between"} mb={1}>
+              <Text fontSize={"14px"}>Residence:</Text>
+              <Text fontSize={"13px"} color={"#8c8c8e"}>
+                Nigeria
+              </Text>
+            </Flex>
+            <Flex justify={"space-between"} mb={1}>
+              <Text fontSize={"14px"}>City:</Text>
+              <Text fontSize={"13px"} color={"#8c8c8e"}>
+                Benin
+              </Text>
+            </Flex>
+            <Flex justify={"space-between"}>
+              <Text fontSize={"14px"}>Age:</Text>
+              <Text fontSize={"13px"} color={"#8c8c8e"}>
+                28
+              </Text>
+            </Flex>
+          </Box>
+          <Divider my={"30px"} />
+          <Flex justify={"space-around"}>
+            <CircularProgressBar value={98} label="98%" title="French" />
+            <CircularProgressBar value={63} label="63%" title="English" />
+            <CircularProgressBar value={45} label="45%" title="Spanish" />
+          </Flex> */}
+          {/* <Divider my={"30px"} /> */}
