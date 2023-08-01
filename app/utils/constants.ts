@@ -1,12 +1,37 @@
-import {
-  MdClose,
-  MdMenu,
-  MdOutlineMiscellaneousServices,
-} from "react-icons/md";
-import { GoHomeFill } from "react-icons/go";
-import { BiTask, BiSolidMessage } from "react-icons/bi";
-import { IoIosBriefcase } from "react-icons/io";
-import { IconType } from "react-icons";
+export const servicesData = [
+  {
+    id: 1,
+    title: "Responsive Web Design",
+    body: "Create beautiful and responsive websites that look great on all devices.",
+  },
+  {
+    id: 2,
+    title: "Frontend Development",
+    body: "Implement interactive and user-friendly frontend interfaces using modern technologies.",
+  },
+  {
+    id: 3,
+    title: "Web App Development",
+    body: "Build scalable and efficient web applications to meet your business needs.",
+  },
+
+  {
+    id: 4,
+    title: "Performance Optimization",
+    body: "Optimize website performance for faster loading and better user experience.",
+  },
+  {
+    id: 5,
+    title: "Cross-Browser Testing",
+    body: "Ensure your website works flawlessly across different web browsers and devices.",
+  },
+
+  {
+    id: 6,
+    title: "SEO",
+    body: "Improve your website's visibility in search engines and drive organic traffic.",
+  },
+];
 
 export const TechStack = [
   {
