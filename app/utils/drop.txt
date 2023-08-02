@@ -25,3 +25,22 @@
             <CircularProgressBar value={45} label="45%" title="Spanish" />
           </Flex> */}
           {/* <Divider my={"30px"} /> */}
+
+
+          const CircularProgressBar = ({ value, label, title }: ProgressBarProps) => {
+  return (
+    <Center flexDir={"column"}>
+      <CircularProgress
+        value={value}
+        thickness="6px"
+        trackColor={"#191923"}
+        color={"#ffc107"}
+      >
+        <CircularProgressLabel>{label}</CircularProgressLabel>
+      </CircularProgress>
+      <Text fontSize={"14px"} mt={2}>
+        {title}
+      </Text>
+    </Center>
+  );
+};

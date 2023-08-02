@@ -7,7 +7,6 @@ import {
   Tooltip,
   VStack,
   useColorMode,
-  useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
 import { BsMoonStarsFill, BsPersonFill, BsSun } from "react-icons/bs";
@@ -17,7 +16,7 @@ import {
   MdOutlineMiscellaneousServices,
 } from "react-icons/md";
 import { GoHomeFill } from "react-icons/go";
-import { BiTask, BiSolidMessage } from "react-icons/bi";
+import { BiSolidMessage } from "react-icons/bi";
 import { IoIosBriefcase } from "react-icons/io";
 
 const Rightbar = () => {
@@ -26,7 +25,13 @@ const Rightbar = () => {
   const handleToggle = () => setIsOpen(!isOpen);
 
   return (
-    <Box w={"80px"} bg={"#20202a"} h={"98vh"}>
+    <Box
+      minW={"70px"}
+      bg={"#20202a"}
+      // h={"96vh"}
+      display={{ base: "none", lg: "block" }}
+      boxShadow={"xl"}
+    >
       <Center bg={"#252530"}>
         <IconButton
           size={"lg"}

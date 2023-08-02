@@ -5,27 +5,27 @@ import React from "react";
 import Hero from "./body/Hero";
 import Services from "./body/Services";
 import Contact from "./body/Contact";
+import Projects from "./body/Projects";
 
 const Body = () => {
   return (
-    <Flex w={"full"} flexDirection={"column"}>
-      <Flex
-        w={"full"}
-        m={"30px"}
+    <Box w={"100%"}>
+      <Box
+        border={"1px solid green"}
+        p={"30px"}
         backgroundImage={"images/backdrop.webp"}
         backgroundPosition={"top"}
         backgroundRepeat={"no-repeat"}
         backgroundSize={"cover"}
       >
-        <Flex w={"full"}>
-          <Hero />
-        </Flex>
-      </Flex>
-      <Flex m={"30px"} flexDirection={"column"} gap={10}>
+        <Hero />
+      </Box>
+      <Flex mx={"30px"} mt={"30px"} flexDirection={"column"} gap={10}>
         <Services />
+        <Projects />
         <Contact />
       </Flex>
-    </Flex>
+    </Box>
   );
 };
 
