@@ -1,20 +1,11 @@
 "use client";
 
 import { servicesData } from "@/app/utils/constants";
-import {
-  Box,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import React from "react";
+import { Flex, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 
 const Services = () => {
   return (
-    <Stack>
+    <Stack gap={"23px"} id="services">
       <Heading fontSize={"17px"}>My Services</Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={7}>
         {servicesData.map((item) => (

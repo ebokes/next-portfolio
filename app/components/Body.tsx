@@ -10,16 +10,7 @@ import Projects from "./body/Projects";
 const Body = () => {
   return (
     <Box w={"100%"}>
-      <Box
-        border={"1px solid green"}
-        p={"30px"}
-        backgroundImage={"images/backdrop.webp"}
-        backgroundPosition={"top"}
-        backgroundRepeat={"no-repeat"}
-        backgroundSize={"cover"}
-      >
-        <Hero />
-      </Box>
+      <Hero />
       <Flex mx={"30px"} mt={"30px"} flexDirection={"column"} gap={10}>
         <Services />
         <Projects />

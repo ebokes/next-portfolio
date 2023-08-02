@@ -63,9 +63,18 @@ export const TechStack2 = [
   "Figma",
 ];
 
+export interface ProjectDataProps {
+  id: string;
+  img: string;
+  title: string;
+  intro: string;
+  details: string;
+  features: string[];
+}
+
 export const projectsData = [
   {
-    id: 1,
+    id: "chitchat",
     img: "/images/chitchat.webp",
     title: "ChitChat Social Media Web App",
     intro:
@@ -78,14 +87,15 @@ export const projectsData = [
       "Posts, likes and comments are handled by firestore database",
       "Media files are handled by firebase storage.",
     ],
+    technology: "react",
     stack: ["React", "Chakra UI", "React-Icons", "Firebase"],
     code: "https://github.com/ebokes/chitchat",
     live: "https://chitchat-tau.vercel.app/",
   },
   {
-    id: 2,
+    id: "github-profile-vue",
     img: "/images/githubProfile.webp",
-    title: "Github Profile",
+    title: "Github Profile Vue",
     intro:
       "This is a vuejs application that allows users to search for and view GitHub profiles.",
     details:
@@ -94,12 +104,13 @@ export const projectsData = [
       "Built using Vue.js, a popular JavaScript framework for building user interfaces",
       "Integrates with the GitHub API to fetch user data and display it in a user-friendly way",
     ],
+    technology: "vue",
     stack: ["Vue", "TailwindCSS", "React-Icons"],
     code: "https://github.com/ebokes/gihub-profile-vue",
     live: "https://gihub-profile-vue.vercel.app/",
   },
   {
-    id: 3,
+    id: "the-nail-boutique",
     img: "/images/nailboutique.webp",
     title: "Nail Boutique",
     intro:
@@ -111,12 +122,13 @@ export const projectsData = [
       "Search functionality that enables users to search for service providers by keyword",
       "Appointment booking system that allows users to book appointments for their preferred services and service providers",
     ],
+    technology: "react",
     stack: ["React", "MUI", "Styled-Components", "Context-API"],
     code: "https://github.com/Meldy2503/nail-boutique",
     live: "https://nail-boutique.netlify.app/",
   },
   {
-    id: 4,
+    id: "surtfweb",
     img: "/images/surftweb.webp",
     title: "Surftweb",
     intro:
@@ -132,9 +144,9 @@ export const projectsData = [
     live: "https://surftweb.netlify.app/",
   },
   {
-    id: 5,
-    img: "/images/surftweb.webp",
-    title: "Surftweb",
+    id: "crypto-tracker",
+    img: "/images/crypto.webp",
+    title: "Crypto Tracker",
     intro:
       "This is a vuejs application that allows users to search for and view GitHub profiles.",
     details:
@@ -143,14 +155,15 @@ export const projectsData = [
       "Responsive and user-friendly design that works across different devices and screen sizes",
       "Modular and reusable codebase that promotes maintainability and scalability",
     ],
+    technology: "next",
     stack: ["React", "Styled-Components", "MUI"],
     code: "https://github.com/ebokes/surftweb",
     live: "https://surftweb.netlify.app/",
   },
   {
-    id: 6,
-    img: "/images/surftweb.webp",
-    title: "Surftweb",
+    id: "quizbee",
+    img: "/images/quizbee.webp",
+    title: "Quizbee",
     intro:
       "This is a vuejs application that allows users to search for and view GitHub profiles.",
     details:
@@ -159,6 +172,7 @@ export const projectsData = [
       "Responsive and user-friendly design that works across different devices and screen sizes",
       "Modular and reusable codebase that promotes maintainability and scalability",
     ],
+    technology: "react",
     stack: ["React", "Styled-Components", "MUI"],
     code: "https://github.com/ebokes/surftweb",
     live: "https://surftweb.netlify.app/",

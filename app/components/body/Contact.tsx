@@ -2,17 +2,15 @@ import {
   Box,
   Button,
   Flex,
-  FormLabel,
   Heading,
   Input,
   Stack,
   Textarea,
 } from "@chakra-ui/react";
-import React from "react";
 
 const Contact = () => {
   return (
-    <Flex flexDirection={"column"} gap={"23px"}>
+    <Flex flexDirection={"column"} gap={"23px"} id="contact-me">
       <Heading fontSize={"17px"}>Get in touch</Heading>
       <Stack bg={"#2d2d3a"}>
         <Stack m={"30px"} spacing={"30px"}>

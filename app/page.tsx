@@ -14,8 +14,6 @@ export default function Home() {
         align={"flex-start"}
         maxW={"1440px"}
         mx={"auto"}
-        // h={"98vh"}
-        // gap={5}
         // bg={"brand.900"}
         // bg={colorMode === "light" ? "brand.100" : "brand.900"}
       >

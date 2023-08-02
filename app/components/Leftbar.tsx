@@ -4,9 +4,6 @@ import {
   Box,
   Button,
   Center,
-  CheckboxIcon,
-  CircularProgress,
-  CircularProgressLabel,
   Divider,
   Flex,
   HStack,
@@ -15,16 +12,16 @@ import {
   Link,
   Progress,
   Text,
-  useColorMode,
 } from "@chakra-ui/react";
 import {
   FaCheck,
   FaDownload,
-  FaLinkedin,
   FaGithub,
+  FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
 import { TechStack, TechStack2 } from "../utils/constants";
+import PulsatingCircle from "./PulsatingCircle";
 
 interface ProgressBarProps {
   value: number;
@@ -41,7 +38,9 @@ const ProgressBar = ({ value, label, title }: ProgressBarProps) => {
           <Text fontSize={"13px"} color={"#cacace"}>
             {title}
           </Text>
-          <Text fontSize={"13px"}>{label}</Text>
+          <Text fontSize={"13px"} color={"#cacace"}>
+            {label}
+          </Text>
         </Flex>
       </Box>
       <Progress
@@ -49,6 +48,7 @@ const ProgressBar = ({ value, label, title }: ProgressBarProps) => {
         size={"xs"}
         isAnimated
         bg={"#191923"}
+        colorScheme="orange"
         // bg={colorMode === "light" ? "brand.50" : "brand.950"}
       />
     </Box>
@@ -58,12 +58,9 @@ const ProgressBar = ({ value, label, title }: ProgressBarProps) => {
 const Leftbar = () => (
   <Box
     bg={"#20202a"}
-    display={{ base: "none", lg: "block" }}
+    display={{ base: "none", xl: "block" }}
     boxShadow={"xl"}
-    // h={"96vh"}
     position={"relative"}
-    // boxSha
-    // boxShadow={"#0f0f14 0px 3px 8px 0px"}
   >
     <Center
       flexDir={"column"}
@@ -72,11 +69,16 @@ const Leftbar = () => (
       gap={2}
       boxShadow={"lg"}
     >
-      <Avatar
-        src="images/chibu-avatar.webp"
-        name="Chibuokem Egbuchulam"
-        size={"xl"}
-      />
+      <Box position={"relative"}>
+        <Avatar
+          src="/images/chibu-avatar.webp"
+          name="Chibuokem Egbuchulam"
+          size={"xl"}
+        />
+        <Box position={"absolute"} right={"6px"} bottom={"6px"}>
+          <PulsatingCircle />
+        </Box>
+      </Box>
       <Heading
         fontSize={"16px"}
         color={"#fafafc"}

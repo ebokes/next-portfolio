@@ -14,6 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BiChevronRight } from "react-icons/bi";
+import ProjectCard from "../ProjectCard";
 
 const Projects = () => {
   const [detailsStates, setDetailsStates] = useState(
@@ -37,53 +38,17 @@ const Projects = () => {
   };
 
   return (
-    <Stack>
+    <Stack gap={"23px"} id="projects">
       <Heading fontSize={"17px"}>My Projects</Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={7}>
         {projectsData.map((item) => (
-          <Flex
+          <ProjectCard
             key={item.id}
-            bgImage={item.img}
-            // backgroundImage={"images/backdrop.webp"}
-            backgroundPosition={"top"}
-            backgroundRepeat={"no-repeat"}
-            backgroundSize={"cover"}
-            onMouseEnter={() => handleMouseEnter(item.id)}
-            onMouseLeave={() => handleMouseLeave(item.id)}
-            // border={"1px solid red"}
-            h={"300px"}
-            position={"relative"}
-            // _hover={{ scale: 1.5 }}
-          >
-            {detailsStates[item.id] && (
-              <Box
-                pos={"absolute"}
-                bottom={0}
-                // h={detailsStates[item.id] ? "70%" : "0%"}
-                // bg={
-                //   "linear-gradient(59deg, rgba(45, 45, 58, 0.98) 0%, rgba(43, 43, 53, 0.98) 100)"
-                // }
-                bg={"#23232b"}
-                w={"full"}
-                p={8}
-                transition="height 1s ease"
-                overflow="hidden"
-              >
-                <Flex flexDir={"column"} gap={4}>
-                  <Heading fontSize={"14px"} fontWeight={600}>
-                    {item.title}
-                  </Heading>
-                  <Text color={"#8c8c8e"} fontSize={"13px"}>
-                    {item.intro}
-                  </Text>
-                  <HStack color={"#ffc107"} fontSize={"12px"} fontWeight={600}>
-                    <Link href={"/"}>READ MORE</Link>
-                    <BiChevronRight size={"19px"} />
-                  </HStack>
-                </Flex>
-              </Box>
-            )}
-          </Flex>
+            detailsStates={detailsStates}
+            handleMouseEnter={handleMouseEnter}
+            handleMouseLeave={handleMouseLeave}
+            item={item}
+          />
         ))}
       </SimpleGrid>
     </Stack>
