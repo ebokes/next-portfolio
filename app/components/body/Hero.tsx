@@ -32,7 +32,7 @@ const Hero = () => {
               as="h1"
               fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
               fontWeight="bold"
-              w={"500px"}
+              maxW={"500px"}
               mb={2}
             >
               Welcome to My Amazing Art Space!
@@ -48,7 +48,6 @@ const Hero = () => {
                   ],
                   autoStart: true,
                   loop: true,
-                  cursor: `</>`,
                 }}
               />
               <Text color={"#ffc107"}>{"</> "} </Text>

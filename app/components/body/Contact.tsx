@@ -13,7 +13,7 @@ const Contact = () => {
     <Flex flexDirection={"column"} gap={"23px"} id="contact-me">
       <Heading fontSize={"17px"}>Get in touch</Heading>
       <Stack bg={"#2d2d3a"}>
-        <Stack m={"30px"} spacing={"30px"}>
+        <Stack m={{ base: "15px", md: "30px" }} spacing={"30px"}>
           <Box>
             <Input placeholder="Name" borderRadius={0} />
           </Box>

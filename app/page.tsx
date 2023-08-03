@@ -6,7 +6,7 @@ import BodyWrap from "./components/BodyWrap";
 export default function Home() {
   const { colorMode } = useColorMode();
   return (
-    <Flex bg={"#1e1e28"}>
+    <Flex bg={"#191923"}>
       <Flex
         justify={"space-between"}
         w={"full"}

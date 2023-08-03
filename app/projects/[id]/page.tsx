@@ -1,6 +1,7 @@
 "use client";
 
 import BodyWrap from "@/app/components/BodyWrap";
+import Carousel from "@/app/components/Carousel";
 import { projectsData } from "@/app/utils/constants";
 import {
   Box,
@@ -27,7 +28,9 @@ const Project = () => {
   const pictures = [
     "/images/chitchat.webp",
     "/images/quizbee.webp",
-    "/images/nailboutique.webp",
+    "/images/backdrop.webp",
+    "/images/backdrop2.webp",
+    "/images/backdrop3.webp",
   ];
 
   return (
@@ -58,6 +61,7 @@ const Project = () => {
                           width={500}
                           height={400}
                         />
+                        {/* <Carousel pictures={pictures} /> */}
                       </Box>
                     </Box>
                   </Box>
@@ -85,7 +89,8 @@ const Project = () => {
                             spacing={5}
                             fontSize={"12px"}
                             flexDir={{ base: "column", xs: "row" }}
-                            justify={{ base: "center", md: "flex-start" }}
+                            // justify={{ base: "center", md: "flex-start" }}
+                            justify={"center"}
                           >
                             <Link href={item.code} isExternal>
                               <HStack
@@ -143,7 +148,7 @@ const Project = () => {
                               ))}
                             </Flex>
                           </List>
-                          <HStack mt={3} gap={5}>
+                          <HStack mt={3} gap={5} flexWrap={"wrap"}>
                             {item.stack.map((st) => (
                               <HStack
                                 // border={"1px solid white"}
@@ -184,8 +189,12 @@ const Project = () => {
                         </Heading>
                         <Text>Let&apos;s work together!</Text>
                         <Center bg={"#ffc107"} mt={"28px"} px={5} py={2}>
-                          <Link href={item.code} isExternal>
-                            <Text color={"#20202a"} fontSize={"12px"}>
+                          <Link href="/#contact-me">
+                            <Text
+                              color={"#20202a"}
+                              fontSize={"12px"}
+                              _hover={{ textDecoration: "none" }}
+                            >
                               CONTACT ME
                             </Text>
                           </Link>

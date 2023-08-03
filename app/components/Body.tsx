@@ -11,7 +11,12 @@ const Body = () => {
   return (
     <Box w={"100%"}>
       <Hero />
-      <Flex mx={"30px"} mt={"30px"} flexDirection={"column"} gap={10}>
+      <Flex
+        mx={{ base: "15px", md: "30px" }}
+        mt={"30px"}
+        flexDirection={"column"}
+        gap={10}
+      >
         <Services />
         <Projects />
         <Contact />

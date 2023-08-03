@@ -4,3 +4,6 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+.react-scroll .active {
+  color: #ff0000; /* Change to your desired active link color */
+}
