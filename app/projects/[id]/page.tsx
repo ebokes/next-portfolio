@@ -1,7 +1,6 @@
 "use client";
 
-import BodyWrap from "@/app/components/BodyWrap";
-import Carousel from "@/app/components/Carousel";
+import BodyWrap from "@/app/components/elements/BodyWrap";
 import { projectsData } from "@/app/utils/constants";
 import {
   Box,

@@ -14,7 +14,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { BiChevronRight } from "react-icons/bi";
-import ProjectCard from "../ProjectCard";
+import ProjectCard from "../elements/ProjectCard";
+// import ProjectCard from "../ProjectCard";
 
 const Projects = () => {
   const [detailsStates, setDetailsStates] = useState(

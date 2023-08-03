@@ -1,7 +1,7 @@
 "use client";
 import { Flex, useColorMode } from "@chakra-ui/react";
-import Body from "./components/Body";
-import BodyWrap from "./components/BodyWrap";
+import Body from "./components/elements/Body";
+import BodyWrap from "./components/elements/BodyWrap";
 
 export default function Home() {
   const { colorMode } = useColorMode();

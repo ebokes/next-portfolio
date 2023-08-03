@@ -1,9 +1,9 @@
+import { useToggleLeftbar } from "@/app/hooks/toggle";
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
-import Leftbar from "./Leftbar";
-import Rightbar from "./Rightbar";
-import Navbar from "./Navbar";
-import { useToggleLeftbar } from "../hooks/toggle";
+import Leftbar from "../nav/Leftbar";
+import Navbar from "../nav/Navbar";
+import Rightbar from "../nav/Rightbar";
 
 const BodyWrap = ({ children }: { children: React.ReactNode }) => {
   const { isOpen, toggleLeftbar } = useToggleLeftbar();
@@ -14,6 +14,7 @@ const BodyWrap = ({ children }: { children: React.ReactNode }) => {
         p={"15px"}
         justify={"space-between"}
         // position={"relative"}
+        bg={"#191923"}
       >
         <Leftbar isOpen={isOpen} toggleLeftbar={toggleLeftbar} />
         <Box overflow={"scroll"} mr={{ base: "0", md: "70px", xl: "0" }}>

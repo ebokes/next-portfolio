@@ -2,10 +2,10 @@
 
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
-import Hero from "./body/Hero";
-import Services from "./body/Services";
-import Contact from "./body/Contact";
-import Projects from "./body/Projects";
+import Contact from "../home/Contact";
+import Hero from "../home/Hero";
+import Projects from "../home/Projects";
+import Services from "../home/Services";
 
 const Body = () => {
   return (

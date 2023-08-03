@@ -21,8 +21,9 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
-import { TechStack, TechStack2 } from "../utils/constants";
-import PulsatingCircle from "./PulsatingCircle";
+import { TechStack, TechStack2 } from "../../utils/constants";
+import PulsatingCircle from "../elements/PulsatingCircle";
+// import PulsatingCircle from "../PulsatingCircle";
 
 interface ProgressBarProps {
   value: number;
@@ -107,7 +108,7 @@ const Leftbar: React.FC<LeftbarProps> = ({ isOpen, toggleLeftbar }) => {
             Frontend Developer
           </Text>
         </Center>
-        <Box overflowY={"scroll"} h={"100vh"}>
+        <Box overflowY={"scroll"} h={"70vh"}>
           <Box p={"30px"} minW={"230px"}>
             {/* Bio & Circular progressbar sent to drop */}
             <Flex flexDir={"column"} gap={2}>
