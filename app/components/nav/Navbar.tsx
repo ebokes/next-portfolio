@@ -1,18 +1,19 @@
 "use client";
 
-import { Avatar, Button, Flex } from "@chakra-ui/react";
+import { Avatar, Button, Flex, useColorMode } from "@chakra-ui/react";
 import React from "react";
 
 interface NavbarProps {
-  toggleLeftbar: () => void;
+  onOpen: () => void;
+  // rightOnOpen: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ toggleLeftbar }) => {
+const Navbar: React.FC<NavbarProps> = ({ onOpen }) => {
+  const { colorMode } = useColorMode();
   return (
     <Flex
       h={"68px"}
-      // w={"full"}
-      bg={"#252530"}
+      bg={colorMode === "light" ? "white" : "brand.680"}
       align={"center"}
       px={"15px"}
       position={"fixed"}
@@ -23,11 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleLeftbar }) => {
       display={{ base: "flex", lg: "none" }}
       boxShadow={"lg"}
     >
-      <Button
-        px={0}
-        onClick={toggleLeftbar}
-        display={{ base: "block", lg: "none" }}
-      >
+      <Button px={0} onClick={onOpen} display={{ base: "block", lg: "none" }}>
         <Avatar
           size={"xs"}
           name="Chibuokem Egbuchulam"

@@ -1,49 +1,106 @@
-"use client";
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Box } from "@chakra-ui/react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { Title } from "@/app/utils/reuseables";
+import ReviewCard from "../elements/ReviewCard";
+import { reviews } from "@/app/utils/constants";
 
-import React from "react";
-import SwiperCore from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-// import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Box, Image } from "@chakra-ui/react";
-// import Image from "next/image";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+interface CarouselProps {
+  children: React.ReactNode;
+  width: number[];
+}
 
-SwiperCore.use([Navigation, Pagination]);
-
-const Carousel = ({ pictures }: any) => {
+const NextArrow = ({ onClick }: any) => {
   return (
-    <Box w={"full"}>
-      <Swiper
-        // rewind={true}
-        spaceBetween={5} // Adjust the spacing between slides as needed
-        slidesPerView={2} // Display two slides at a time
-        slidesPerGroup={1} // Display three pictures at a time
-        loop={true} // Enable continuous loop
-        // navigation // Enable navigation arrows
-        pagination={{ clickable: true }} // Enable pagination dots
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
+    <Box onClick={onClick} position={"absolute"} bottom="-50px" right="0px">
+      <FaAngleRight />
+    </Box>
+  );
+};
+
+const PrevArrow = ({ onClick }: any) => {
+  return (
+    <Box onClick={onClick} position={"absolute"} bottom="-50px" right="20px">
+      <FaAngleLeft />
+    </Box>
+  );
+};
+
+const Carousel = ({ children, width }: CarouselProps) => {
+  const settings = {
+    // className: "center",
+    dots: true,
+    infinite: true,
+    // lazyLoad: true,
+    speed: 1000,
+    autoplaySpeed: 4000,
+    slidesToShow: 2,
+    slidesToScroll: 1, // Add this prop to scroll two items at a time
+    // centerMode: true,
+    centerPadding: "8px",
+    initialSlide: 0,
+    autoplay: true,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      //   {
+      //     breakpoint: 1200,
+      //     settings: {
+      //       slidesToShow: 2,
+      //     },
+      //   },
+
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+        },
+      },
+    ],
+  };
+
+  const [viewportWidth, setViewportWidth] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  //   const width = [35, 150, 450, 990];
+
+  return (
+    <Box id="reviews">
+      <Box
+        display="block"
+        maxW={{
+          base: viewportWidth - width[0],
+          md: viewportWidth - width[1],
+          lg: viewportWidth - width[2],
+          xl: width[3],
         }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        // maxW={{
+        //   base: viewportWidth - 35,
+        //   md: viewportWidth - 150,
+        //   lg: viewportWidth - 450,
+        //   xl: 990,
+        // }}
       >
-        {pictures.map((picture: any, index: number) => (
-          <SwiperSlide key={index}>
-            <Image
-              src={picture}
-              alt={`Slide ${index + 1}`}
-              w={"690px"}
-              h={"277px"}
-              // width={400}
-              // height={300}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Slider {...settings}>{children}</Slider>
+      </Box>
     </Box>
   );
 };

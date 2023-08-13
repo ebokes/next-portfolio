@@ -1,26 +1,33 @@
 "use client";
 
 import { projectsData } from "@/app/utils/constants";
+import { Title } from "@/app/utils/reuseables";
 import {
-  Box,
   Flex,
-  HStack,
-  Heading,
+  List,
+  ListItem,
   SimpleGrid,
   Stack,
-  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useRef, useState } from "react";
-import { BiChevronRight } from "react-icons/bi";
+import { useState } from "react";
 import ProjectCard from "../elements/ProjectCard";
-// import ProjectCard from "../ProjectCard";
 
 const Projects = () => {
-  const [detailsStates, setDetailsStates] = useState(
+  const [detailsStates, setDetailsStates] = useState<boolean[]>(
     projectsData.map(() => false)
   );
+  const [selectedCategory, setSelectedCategory] = useState("ALL CATEGORIES");
+  const activeColorScheme = useColorModeValue("black", "white");
+
+  const handleSelectedCategory = (category: string) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProjects =
+    selectedCategory === "ALL CATEGORIES"
+      ? projectsData
+      : projectsData.filter((project) => project.category === selectedCategory);
 
   const handleMouseEnter = (index: number) => {
     setDetailsStates((prevStates) => {
@@ -41,15 +48,43 @@ const Projects = () => {
   return (
     <>
       <Stack gap={"23px"} id="projects">
-        <Heading fontSize={"17px"}>My Projects</Heading>
-        <Flex gap={5} fontSize={"12px"} fontWeight={600}>
-          <Text>ALL CATEGORIES</Text>
-          <Text>NEXTJS</Text>
-          <Text>REACTJS</Text>
-          <Text>VUE</Text>
-        </Flex>
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={7}>
-          {projectsData.map((item) => (
+        <Title>My Projects</Title>
+        {/* <Flex > */}
+        <List
+          as={Flex}
+          color="brand.780"
+          gap={5}
+          fontSize={"12px"}
+          fontWeight={600}
+          cursor={"pointer"}
+        >
+          <ListItem
+            onClick={() => handleSelectedCategory("ALL CATEGORIES")}
+            color={
+              selectedCategory === "ALL CATEGORIES"
+                ? activeColorScheme
+                : "brand.780"
+            }
+          >
+            ALL CATEGORIES
+          </ListItem>
+          {Array.from(
+            new Set(projectsData.map((project) => project.category))
+          ).map((category) => (
+            <ListItem
+              key={category}
+              color={
+                selectedCategory === category ? activeColorScheme : undefined
+              }
+              onClick={() => handleSelectedCategory(category)}
+            >
+              {category}
+            </ListItem>
+          ))}
+        </List>
+        {/* </Flex> */}
+        <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={7}>
+          {filteredProjects.map((item) => (
             <ProjectCard
               key={item.id}
               detailsStates={detailsStates}
