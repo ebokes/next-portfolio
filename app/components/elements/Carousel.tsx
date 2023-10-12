@@ -31,15 +31,12 @@ const PrevArrow = ({ onClick }: any) => {
 
 const Carousel = ({ children, width }: CarouselProps) => {
   const settings = {
-    // className: "center",
     dots: true,
     infinite: true,
-    // lazyLoad: true,
     speed: 1000,
     autoplaySpeed: 4000,
     slidesToShow: 2,
-    slidesToScroll: 1, // Add this prop to scroll two items at a time
-    // centerMode: true,
+    slidesToScroll: 1,
     centerPadding: "8px",
     initialSlide: 0,
     autoplay: true,

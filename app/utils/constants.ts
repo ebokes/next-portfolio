@@ -1,8 +1,12 @@
+import { Icon, IconProps } from "@chakra-ui/react";
 import { CgBrowser, CgPerformance } from "react-icons/cg";
 import { IoIosApps } from "react-icons/io";
 import { MdOutlineDevices } from "react-icons/md";
 import { RiCodeView } from "react-icons/ri";
 import { TbWorldSearch } from "react-icons/tb";
+import { BsPersonFill } from "react-icons/bs";
+import { MdAlternateEmail, MdOutlineEmail } from "react-icons/md";
+import { IconType } from "react-icons";
 
 export const servicesData = [
   {
@@ -88,13 +92,206 @@ export interface ProjectDataProps {
   live?: string;
 }
 
+export const allProjectsData = [
+  {
+    id: "chatter",
+    img: [
+      "/images/chatter1.webp",
+      "/images/chatter2.webp",
+      "/images/chatter3.webp",
+    ],
+    title: "ChitChat Social Media Web App",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
+    features: [
+      "The app includes a landing page, a login page, a sign-up page and a page for joining an existing chat room.",
+      " User authentication is handled using Firebase Authentication",
+      "Posts, likes and comments are handled by firestore database",
+      "Media files are handled by firebase storage.",
+    ],
+    category: "NEXTJS",
+    stack: ["Nextjs", "Chakra UI", "React-Icons", "Firebase"],
+    code: "https://github.com/ebokes/chatter",
+    live: "https://chatter-blog-opal.vercel.app/",
+  },
+  {
+    id: "chitchat",
+    img: [
+      "/images/chitchat0.webp",
+      "/images/chitchat1.webp",
+      "/images/chitchat2.webp",
+      "/images/chitchat3.webp",
+    ],
+    title: "ChitChat Social Media Web App",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
+    features: [
+      "The app includes a landing page, a login page, a sign-up page and a page for joining an existing chat room.",
+      " User authentication is handled using Firebase Authentication",
+      "Posts, likes and comments are handled by firestore database",
+      "Media files are handled by firebase storage.",
+    ],
+    category: "REACTJS",
+    stack: ["React", "Chakra UI", "React-Icons", "Firebase"],
+    code: "https://github.com/ebokes/chitchat",
+    live: "https://chitchat-tau.vercel.app/",
+  },
+
+  {
+    id: "the-nail-boutique",
+    img: [
+      "/images/nailboutique1.webp",
+      "/images/nailboutique2.webp",
+      "/images/nailboutique3.webp",
+    ],
+    title: "Nail Boutique",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "Nail Boutique is a beauty brand that offers nail, hair and skin care services to her clients.",
+    features: [
+      "Service catalog that allows users to browse nail care services by category",
+      "Search functionality that enables users to search for service providers by keyword",
+      "Appointment booking system that allows users to book appointments for their preferred services and service providers",
+    ],
+    category: "REACTJS",
+    stack: ["React", "MUI", "Styled-Components", "Context-API"],
+    code: "https://github.com/Meldy2503/nail-boutique",
+    live: "https://nail-boutique.netlify.app/",
+  },
+  {
+    id: "github-profile-react",
+    img: [
+      "/images/rgithub1.webp",
+      "/images/rgithub2.webp",
+      "/images/rgithub3.webp",
+    ],
+    title: "Github Profile React",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "This is a vuejs application that allows users to search for and view GitHub profiles. The application fetches user data from the GitHub API and displays it in a responsive UI.",
+    features: [
+      "Built using Vue.js, a popular JavaScript framework for building user interfaces",
+      "Integrates with the GitHub API to fetch user data and display it in a user-friendly way",
+    ],
+    category: "REACTJS",
+    stack: ["Vue", "TailwindCSS", "React-Icons"],
+    code: "https://github.com/ebokes/gihub-profile-vue",
+    live: "https://gihub-profile-vue.vercel.app/",
+  },
+  {
+    id: "github-profile-vue",
+    img: [
+      "/images/vgithub1.webp",
+      "/images/vgithub2.webp",
+      "/images/vgithub3.webp",
+    ],
+    title: "Github Profile Vue",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "This is a vuejs application that allows users to search for and view GitHub profiles. The application fetches user data from the GitHub API and displays it in a responsive UI.",
+    features: [
+      "Built using Vue.js, a popular JavaScript framework for building user interfaces",
+      "Integrates with the GitHub API to fetch user data and display it in a user-friendly way",
+    ],
+    category: "VUEJS",
+    stack: ["Vue", "TailwindCSS", "React-Icons"],
+    code: "https://github.com/ebokes/gihub-profile-vue",
+    live: "https://gihub-profile-vue.vercel.app/",
+  },
+  {
+    id: "surtfweb",
+    img: [
+      "/images/surftweb1.webp",
+      "/images/surftweb2.webp",
+      "/images/surftweb3.webp",
+      "/images/surftweb4.webp",
+    ],
+    title: "Surftweb",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
+    features: [
+      "Responsive and user-friendly design that works across different devices and screen sizes",
+      "Modular and reusable codebase that promotes maintainability and scalability",
+    ],
+    category: "REACTJS",
+    stack: ["React", "Styled-Components", "MUI"],
+    code: "https://github.com/ebokes/surftweb",
+    live: "https://surftweb.netlify.app/",
+  },
+  {
+    id: "crypto-tracker",
+    img: ["/images/crypto.webp"],
+    title: "Crypto Tracker",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
+    features: [
+      "Responsive and user-friendly design that works across different devices and screen sizes",
+      "Modular and reusable codebase that promotes maintainability and scalability",
+    ],
+    category: "NEXTJS",
+    stack: ["React", "Styled-Components", "MUI"],
+    code: "https://github.com/ebokes/surftweb",
+    live: "https://surftweb.netlify.app/",
+  },
+  {
+    id: "quizbee",
+    img: ["/images/quizbee.webp"],
+    title: "Quizbee",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
+    features: [
+      "Responsive and user-friendly design that works across different devices and screen sizes",
+      "Modular and reusable codebase that promotes maintainability and scalability",
+    ],
+    category: "REACTJS",
+    stack: ["React", "Styled-Components", "MUI"],
+    code: "https://github.com/ebokes/surftweb",
+    live: "https://surftweb.netlify.app/",
+  },
+];
 export const projectsData = [
+  {
+    id: "chatter",
+    img: [
+      "/images/chatter4.webp",
+      "/images/chatter4.webp",
+      "/images/chatter4.webp",
+    ],
+    title: "ChitChat Social Media Web App",
+    intro:
+      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+    details:
+      "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
+    features: [
+      "The app includes a landing page, a login page, a sign-up page and a page for joining an existing chat room.",
+      " User authentication is handled using Firebase Authentication",
+      "Posts, likes and comments are handled by firestore database",
+      "Media files are handled by firebase storage.",
+    ],
+    category: "NEXTJS",
+    stack: ["Nextjs", "Chakra UI", "React-Icons", "Firebase"],
+    code: "https://github.com/ebokes/chatter",
+    live: "https://chatter-blog-opal.vercel.app/",
+  },
   {
     id: "chitchat",
     img: [
       "/images/chitchat1.webp",
-      "/images/chitchat1.webp",
-      "/images/chitchat1.webp",
+      "/images/chitchat2.webp",
+      "/images/chitchat3.webp",
     ],
     title: "ChitChat Social Media Web App",
     intro:
@@ -185,23 +382,6 @@ export const projectsData = [
       "Modular and reusable codebase that promotes maintainability and scalability",
     ],
     category: "NEXTJS",
-    stack: ["React", "Styled-Components", "MUI"],
-    code: "https://github.com/ebokes/surftweb",
-    live: "https://surftweb.netlify.app/",
-  },
-  {
-    id: "quizbee",
-    img: ["/images/quizbee.webp"],
-    title: "Quizbee",
-    intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
-    details:
-      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
-    features: [
-      "Responsive and user-friendly design that works across different devices and screen sizes",
-      "Modular and reusable codebase that promotes maintainability and scalability",
-    ],
-    category: "REACTJS",
     stack: ["React", "Styled-Components", "MUI"],
     code: "https://github.com/ebokes/surftweb",
     live: "https://surftweb.netlify.app/",
@@ -341,4 +521,25 @@ export const reviews = [
   },
 ];
 
-// export const projectImg = [{}];
+interface InputProps {
+  placeholder: string;
+  icon: IconType;
+  inputName: string;
+  type: string;
+}
+
+export const input: InputProps[] = [
+  { placeholder: "Name", icon: BsPersonFill, inputName: "name", type: "input" },
+  {
+    placeholder: "Email",
+    icon: MdAlternateEmail,
+    inputName: "email",
+    type: "input",
+  },
+  {
+    placeholder: "Message",
+    icon: MdOutlineEmail,
+    inputName: "message",
+    type: "textarea", // Use "textarea" in lowercase
+  },
+];

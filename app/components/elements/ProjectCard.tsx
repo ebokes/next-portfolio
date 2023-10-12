@@ -19,26 +19,36 @@ const ProjectCard = ({
 }: any) => {
   const { colorMode } = useColorMode();
   return (
-    <Flex
-      bgImage={item.img}
-      backgroundPosition={"top"}
-      backgroundRepeat={"no-repeat"}
-      backgroundSize={"cover"}
-      onMouseEnter={() => handleMouseEnter(item.id)}
-      onMouseLeave={() => handleMouseLeave(item.id)}
-      h={"270px"}
-      position={"relative"}
-      // _hover={{ scale: 1.5 }}
-    >
-      {detailsStates[item.id] && (
+    <Box bg={colorMode === "light" ? "brand.140" : "brand.640"}>
+      <Flex
+        bgImage={item.img[0]}
+        backgroundPosition={"top"}
+        backgroundRepeat={"no-repeat"}
+        backgroundSize={"cover"}
+        onMouseEnter={() => handleMouseEnter(item.id)}
+        onMouseLeave={() => handleMouseLeave(item.id)}
+        h={"270px"}
+        position={"relative"}
+        overflow={"hidden"}
+        m={1}
+      >
         <Box
+          bg={"#00000036"}
+          pos={"absolute"}
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          h={"full"}
+          w={"full"}
+        />
+        <Box
+          className={detailsStates[item.id] ? "slide-in" : "slide-down"}
           pos={"absolute"}
           bottom={0}
           bg={colorMode === "light" ? "brand.140" : "brand.640"}
           w={"full"}
           p={8}
-          transition="height 1s ease"
-          overflow="hidden"
         >
           <Flex flexDir={"column"} gap={4}>
             <Heading fontSize={"14px"} fontWeight={600}>
@@ -62,8 +72,8 @@ const ProjectCard = ({
             </Link>
           </Flex>
         </Box>
-      )}
-    </Flex>
+      </Flex>
+    </Box>
   );
 };
 

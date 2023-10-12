@@ -43,8 +43,9 @@ const ReviewCard: React.FC<ReviewProps> = ({
         px={6}
         gap={2}
         borderRadius={"2xl"}
-        bg={colorMode === "light" ? "white" : "brand.620"}
+        bg={colorMode === "light" ? "brand.260" : "brand.620"}
         color={colorMode === "light" ? "brand.420" : "brand.400"}
+        boxShadow={"inset 0 3px 8px 0 rgba(15,15,20,.2)"}
       >
         <Icon as={BsFillStarFill} />
         <Icon as={BsFillStarFill} />

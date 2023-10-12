@@ -2,7 +2,7 @@
 
 import Nav from "@/app/components/nav/Nav";
 import Contact from "@/app/components/home/Contact";
-import { ProjectDataProps, projectsData } from "@/app/utils/constants";
+import { ProjectDataProps, projectsData, reviews } from "@/app/utils/constants";
 import {
   Box,
   Button,
@@ -31,6 +31,7 @@ import { FaCheck } from "react-icons/fa";
 import { HiBadgeCheck, HiCode } from "react-icons/hi";
 import CoverImage from "@/app/components/elements/CoverImage";
 import Carousel from "@/app/components/elements/Carousel";
+import ReviewCard from "@/app/components/elements/ReviewCard";
 
 const Project: React.FC<ProjectDataProps> = () => {
   const { id } = useParams();
@@ -52,15 +53,31 @@ const Project: React.FC<ProjectDataProps> = () => {
                           <Heading fontSize={"22px"} mb={"30px"}>
                             {item.title}
                           </Heading>
-                          <Carousel width={[35, 50, 230, 770]}>
-                            {item.img.map((img, i) => (
+                          <Carousel
+                            //  width={[35, 50, 330, 870]}
+                            width={[35, 150, 450, 990]}
+                          >
+                            {/* {item.img.map((img, i) => (
                               <Image
                                 key={i}
                                 src={img}
                                 alt="item.id"
-                                width={200}
-                                height={100}
-                                style={{ objectPosition: "top" }}
+                                width={50}
+                                height={50}
+                                style={{
+                                  objectPosition: "top",
+                                  marginRight: 5,
+                                  width: "100%",
+                                }}
+                              />
+                            ))} */}
+                            {reviews.map((item) => (
+                              <ReviewCard
+                                key={item.name}
+                                name={item.name}
+                                // img={item.img}
+                                position={item.position}
+                                message={item.message}
                               />
                             ))}
                           </Carousel>

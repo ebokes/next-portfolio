@@ -1,6 +1,6 @@
 "use client";
 
-import { projectsData } from "@/app/utils/constants";
+import { ProjectDataProps, projectsData } from "@/app/utils/constants";
 import { Title } from "@/app/utils/reuseables";
 import {
   Flex,
@@ -13,9 +13,13 @@ import {
 import { useState } from "react";
 import ProjectCard from "../elements/ProjectCard";
 
-const Projects = () => {
+interface ProjectsProps {
+  data?: ProjectDataProps[];
+}
+
+const Projects: React.FC<ProjectsProps> = ({ data = projectsData }) => {
   const [detailsStates, setDetailsStates] = useState<boolean[]>(
-    projectsData.map(() => false)
+    Array(data?.length).fill(false)
   );
   const [selectedCategory, setSelectedCategory] = useState("ALL CATEGORIES");
   const activeColorScheme = useColorModeValue("black", "white");
@@ -26,8 +30,8 @@ const Projects = () => {
 
   const filteredProjects =
     selectedCategory === "ALL CATEGORIES"
-      ? projectsData
-      : projectsData.filter((project) => project.category === selectedCategory);
+      ? data
+      : data?.filter((project) => project.category === selectedCategory);
 
   const handleMouseEnter = (index: number) => {
     setDetailsStates((prevStates) => {
@@ -84,7 +88,7 @@ const Projects = () => {
         </List>
         {/* </Flex> */}
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={7}>
-          {filteredProjects.map((item) => (
+          {filteredProjects?.map((item) => (
             <ProjectCard
               key={item.id}
               detailsStates={detailsStates}

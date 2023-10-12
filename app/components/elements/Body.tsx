@@ -7,6 +7,7 @@ import Projects from "../home/Projects";
 import Services from "../home/Services";
 import TechStacks from "../home/TechStack";
 import Reviews from "../home/Reviews";
+import Slides from "./Slides";
 
 const Body = () => {
   return (
@@ -21,6 +22,7 @@ const Body = () => {
         <Services />
         <TechStacks />
         <Reviews />
+        {/* <Slides /> */}
         <Projects />
         <Contact />
       </Flex>
