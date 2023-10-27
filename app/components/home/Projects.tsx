@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import ProjectCard from "../elements/ProjectCard";
+import ProjectCard from "../../utils/ProjectCard";
 
 interface ProjectsProps {
   data?: ProjectDataProps[];

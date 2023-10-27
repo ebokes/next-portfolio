@@ -5,7 +5,7 @@ import Contact from "@/app/components/home/Contact";
 import { ProjectDataProps, projectsData, reviews } from "@/app/utils/constants";
 import {
   Box,
-  Button,
+  // Button,
   Center,
   Flex,
   HStack,
@@ -29,11 +29,12 @@ import { useParams } from "next/navigation";
 import { CgScreen } from "react-icons/cg";
 import { FaCheck } from "react-icons/fa";
 import { HiBadgeCheck, HiCode } from "react-icons/hi";
-import CoverImage from "@/app/components/elements/CoverImage";
-import Carousel from "@/app/components/elements/Carousel";
-import ReviewCard from "@/app/components/elements/ReviewCard";
+import CoverImage from "@/app/utils/CoverImage";
+import Carousel from "@/app/utils/Carousel";
+import ReviewCard from "@/app/utils/ReviewCard";
+import Button from "@/app/utils/Button";
 
-const Project: React.FC<ProjectDataProps> = () => {
+const Project = () => {
   const { id } = useParams();
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -57,27 +58,18 @@ const Project: React.FC<ProjectDataProps> = () => {
                             //  width={[35, 50, 330, 870]}
                             width={[35, 150, 450, 990]}
                           >
-                            {/* {item.img.map((img, i) => (
+                            {item.img.map((img, i) => (
                               <Image
                                 key={i}
                                 src={img}
                                 alt="item.id"
-                                width={50}
-                                height={50}
+                                width={500}
+                                height={500}
                                 style={{
                                   objectPosition: "top",
                                   marginRight: 5,
                                   width: "100%",
                                 }}
-                              />
-                            ))} */}
-                            {reviews.map((item) => (
-                              <ReviewCard
-                                key={item.name}
-                                name={item.name}
-                                // img={item.img}
-                                position={item.position}
-                                message={item.message}
                               />
                             ))}
                           </Carousel>
@@ -118,50 +110,30 @@ const Project: React.FC<ProjectDataProps> = () => {
                               flexDir={{ base: "column", xs: "row" }}
                               justify={"center"}
                             >
-                              <Link href={item.code} isExternal>
-                                <HStack
-                                  bg={
-                                    colorMode === "light"
-                                      ? "brand.420"
-                                      : "brand.400"
-                                  }
-                                  px={5}
-                                  py={"3px"}
-                                  boxShadow={"lg"}
-                                  color={
-                                    colorMode === "light" ? "white" : "black"
-                                  }
-                                  w={"90px"}
-                                  justify={"center"}
-                                  fontSize={"14px"}
-                                  fontWeight={600}
-                                >
+                              <Button
+                                as={Link}
+                                href={item.code}
+                                target="_blank"
+                                px={4}
+                                py={"3px"}
+                              >
+                                <HStack>
                                   <Icon as={HiCode} />
                                   <Text>CODE</Text>
                                 </HStack>
-                              </Link>
-                              <Link href={item.live} isExternal>
-                                <HStack
-                                  bg={
-                                    colorMode === "light"
-                                      ? "brand.420"
-                                      : "brand.400"
-                                  }
-                                  px={5}
-                                  py={"3px"}
-                                  w={"90px"}
-                                  color={
-                                    colorMode === "light" ? "white" : "black"
-                                  }
-                                  boxShadow={"lg"}
-                                  justify={"center"}
-                                  fontSize={"14px"}
-                                  fontWeight={600}
-                                >
+                              </Button>
+                              <Button
+                                as={Link}
+                                href={item.live}
+                                target="_blank"
+                                px={5}
+                                py={"3px"}
+                              >
+                                <HStack>
                                   <Icon as={CgScreen} />
                                   <Text>LIVE</Text>
                                 </HStack>
-                              </Link>
+                              </Button>
                             </HStack>
                           </Stack>
                           <Stack
@@ -256,24 +228,7 @@ const Project: React.FC<ProjectDataProps> = () => {
               </Heading>
               <Text color={"white"}>Let&apos;s work together!</Text>
               <Center mt={"28px"}>
-                <Button
-                  px={5}
-                  py={1}
-                  bg={colorMode === "light" ? "brand.420" : "brand.400"}
-                  boxShadow={"md"}
-                  _hover={{
-                    background:
-                      colorMode === "light" ? "brand.420" : "brand.400",
-                    color: colorMode === "light" ? "white" : "brand.620",
-                    transform: "translateY(-1px)",
-                    boxShadow: "xl",
-                  }}
-                  borderRadius={0}
-                  onClick={onOpen}
-                  color={colorMode === "light" ? "brand.120" : "brand.620"}
-                  fontWeight={600}
-                  fontSize={"12px"}
-                >
+                <Button onClick={onOpen} fontSize="12px" px={5} py={2}>
                   CONTACT ME
                 </Button>
               </Center>

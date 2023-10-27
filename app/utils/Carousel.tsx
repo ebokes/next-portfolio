@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@chakra-ui/react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Title } from "@/app/utils/reuseables";
-import ReviewCard from "../elements/ReviewCard";
+import ReviewCard from "./ReviewCard";
 import { reviews } from "@/app/utils/constants";
 
 interface CarouselProps {
@@ -34,7 +34,7 @@ const Carousel = ({ children, width }: CarouselProps) => {
     dots: true,
     infinite: true,
     speed: 1000,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 7000,
     slidesToShow: 2,
     slidesToScroll: 1,
     centerPadding: "8px",

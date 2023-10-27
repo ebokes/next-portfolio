@@ -80,10 +80,10 @@ export const TechStack2 = [
 ];
 
 export interface ProjectDataProps {
-  id: string;
-  img: string[];
-  title: string;
-  intro: string;
+  id?: string;
+  img?: string[];
+  title?: string;
+  intro?: string;
   details?: string;
   features?: string[];
   category?: string;
@@ -100,20 +100,20 @@ export const allProjectsData = [
       "/images/chatter2.webp",
       "/images/chatter3.webp",
     ],
-    title: "ChitChat Social Media Web App",
+    title: "Chatter Web App",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "Chatter is a haven for text-based content enthusiasts, offering a multi-functional platform where authors and readers can create and access their own content.",
     details:
-      "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
+      "Chatter is a haven for text-based content enthusiasts, offering a multi-functional platform where authors and readers can create and access their own content.",
     features: [
-      "The app includes a landing page, a login page, a sign-up page and a page for joining an existing chat room.",
+      "The app includes a landing page, feed, bookmarks, login page, a sign-up page etc.",
       " User authentication is handled using Firebase Authentication",
       "Posts, likes and comments are handled by firestore database",
       "Media files are handled by firebase storage.",
     ],
     category: "NEXTJS",
     stack: ["Nextjs", "Chakra UI", "React-Icons", "Firebase"],
-    code: "https://github.com/ebokes/chatter",
+    code: "https://github.com/ebokes/chatter-blog",
     live: "https://chatter-blog-opal.vercel.app/",
   },
   {
@@ -126,7 +126,7 @@ export const allProjectsData = [
     ],
     title: "ChitChat Social Media Web App",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
     details:
       "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
     features: [
@@ -150,7 +150,7 @@ export const allProjectsData = [
     ],
     title: "Nail Boutique",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "Nail Boutique is a beauty brand that offers nail, hair and skin care services to her clients.",
     details:
       "Nail Boutique is a beauty brand that offers nail, hair and skin care services to her clients.",
     features: [
@@ -172,16 +172,16 @@ export const allProjectsData = [
     ],
     title: "Github Profile React",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "This is a reactjs application that allows users to search for and view GitHub profiles.",
     details:
-      "This is a vuejs application that allows users to search for and view GitHub profiles. The application fetches user data from the GitHub API and displays it in a responsive UI.",
+      "This is a reactjs application that allows users to search for and view GitHub profiles. The application fetches user data from the GitHub API and displays it in a responsive UI.",
     features: [
-      "Built using Vue.js, a popular JavaScript framework for building user interfaces",
+      "Built using react.js, a popular JavaScript framework for building user interfaces",
       "Integrates with the GitHub API to fetch user data and display it in a user-friendly way",
     ],
     category: "REACTJS",
     stack: ["Vue", "TailwindCSS", "React-Icons"],
-    code: "https://github.com/ebokes/gihub-profile-vue",
+    code: "https://github.com/ebokes/gihub-profile-react",
     live: "https://gihub-profile-vue.vercel.app/",
   },
   {
@@ -215,7 +215,7 @@ export const allProjectsData = [
     ],
     title: "Surftweb",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
     details:
       "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
     features: [
@@ -232,70 +232,70 @@ export const allProjectsData = [
     img: ["/images/crypto.webp"],
     title: "Crypto Tracker",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "This is a simple react application where users can view as well as search for crypto currencies, view their prices, volume and their market cap.",
     details:
-      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
+      "This is a simple react application where users can view as well as search for crypto currencies, view their prices, volume and their market cap.",
     features: [
       "Responsive and user-friendly design that works across different devices and screen sizes",
-      "Modular and reusable codebase that promotes maintainability and scalability",
+      "Light and dark mode functionality",
     ],
     category: "NEXTJS",
     stack: ["React", "Styled-Components", "MUI"],
-    code: "https://github.com/ebokes/surftweb",
-    live: "https://surftweb.netlify.app/",
+    code: "https://github.com/ebokes/crypto_app",
+    live: "https://deft-gelato-c67e98.netlify.app/",
   },
   {
     id: "quizbee",
     img: ["/images/quizbee.webp"],
     title: "Quizbee",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "This is a simple react quiz app application that presents users with questions that they are to supply answers to. They are scored based on the correct answers.",
     details:
-      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
+      "This is a simple react quiz app application that presents users with questions that they are to supply answers to. They are scored based on the correct answers.",
     features: [
       "Responsive and user-friendly design that works across different devices and screen sizes",
-      "Modular and reusable codebase that promotes maintainability and scalability",
     ],
     category: "REACTJS",
     stack: ["React", "Styled-Components", "MUI"],
-    code: "https://github.com/ebokes/surftweb",
-    live: "https://surftweb.netlify.app/",
+    code: "https://github.com/ebokes/quiz_bee",
+    live: "https://ebokes.github.io/quiz_bee/",
   },
 ];
 export const projectsData = [
   {
     id: "chatter",
     img: [
-      "/images/chatter4.webp",
-      "/images/chatter4.webp",
-      "/images/chatter4.webp",
+      "/images/chatter1.webp",
+      "/images/chatter2.webp",
+      "/images/chatter3.webp",
     ],
-    title: "ChitChat Social Media Web App",
+    title: "Chatter Web App",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "Chatter is a haven for text-based content enthusiasts, offering a multi-functional platform where authors and readers can create and access their own content.",
     details:
-      "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
+      "Chatter is a haven for text-based content enthusiasts, offering a multi-functional platform where authors and readers can create and access their own content.",
     features: [
-      "The app includes a landing page, a login page, a sign-up page and a page for joining an existing chat room.",
+      "The app includes a landing page, feed, bookmarks, login page, a sign-up page etc.",
       " User authentication is handled using Firebase Authentication",
       "Posts, likes and comments are handled by firestore database",
       "Media files are handled by firebase storage.",
     ],
     category: "NEXTJS",
     stack: ["Nextjs", "Chakra UI", "React-Icons", "Firebase"],
-    code: "https://github.com/ebokes/chatter",
+    code: "https://github.com/ebokes/chatter-blog",
     live: "https://chatter-blog-opal.vercel.app/",
   },
   {
     id: "chitchat",
     img: [
+      "/images/chitchat0.webp",
       "/images/chitchat1.webp",
       "/images/chitchat2.webp",
       "/images/chitchat3.webp",
     ],
     title: "ChitChat Social Media Web App",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
     details:
       "ChitChat is a social media web app that helps you can stay connected with the people who matter to you the most as well as meet new people.",
     features: [
@@ -308,6 +308,50 @@ export const projectsData = [
     stack: ["React", "Chakra UI", "React-Icons", "Firebase"],
     code: "https://github.com/ebokes/chitchat",
     live: "https://chitchat-tau.vercel.app/",
+  },
+
+  {
+    id: "the-nail-boutique",
+    img: [
+      "/images/nailboutique1.webp",
+      "/images/nailboutique2.webp",
+      "/images/nailboutique3.webp",
+    ],
+    title: "Nail Boutique",
+    intro:
+      "Nail Boutique is a beauty brand that offers nail, hair and skin care services to her clients.",
+    details:
+      "Nail Boutique is a beauty brand that offers nail, hair and skin care services to her clients.",
+    features: [
+      "Service catalog that allows users to browse nail care services by category",
+      "Search functionality that enables users to search for service providers by keyword",
+      "Appointment booking system that allows users to book appointments for their preferred services and service providers",
+    ],
+    category: "REACTJS",
+    stack: ["React", "MUI", "Styled-Components", "Context-API"],
+    code: "https://github.com/Meldy2503/nail-boutique",
+    live: "https://nail-boutique.netlify.app/",
+  },
+  {
+    id: "github-profile-react",
+    img: [
+      "/images/rgithub1.webp",
+      "/images/rgithub2.webp",
+      "/images/rgithub3.webp",
+    ],
+    title: "Github Profile React",
+    intro:
+      "This is a reactjs application that allows users to search for and view GitHub profiles.",
+    details:
+      "This is a reactjs application that allows users to search for and view GitHub profiles. The application fetches user data from the GitHub API and displays it in a responsive UI.",
+    features: [
+      "Built using react.js, a popular JavaScript framework for building user interfaces",
+      "Integrates with the GitHub API to fetch user data and display it in a user-friendly way",
+    ],
+    category: "REACTJS",
+    stack: ["Vue", "TailwindCSS", "React-Icons"],
+    code: "https://github.com/ebokes/gihub-profile-react",
+    live: "https://gihub-profile-vue.vercel.app/",
   },
   {
     id: "github-profile-vue",
@@ -331,33 +375,16 @@ export const projectsData = [
     live: "https://gihub-profile-vue.vercel.app/",
   },
   {
-    id: "the-nail-boutique",
-    img: [
-      "/images/nailboutique1.webp",
-      "/images/nailboutique2.webp",
-      "/images/nailboutique3.webp",
-    ],
-    title: "Nail Boutique",
-    intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
-    details:
-      "Nail Boutique is a beauty brand that offers nail, hair and skin care services to her clients.",
-    features: [
-      "Service catalog that allows users to browse nail care services by category",
-      "Search functionality that enables users to search for service providers by keyword",
-      "Appointment booking system that allows users to book appointments for their preferred services and service providers",
-    ],
-    category: "REACTJS",
-    stack: ["React", "MUI", "Styled-Components", "Context-API"],
-    code: "https://github.com/Meldy2503/nail-boutique",
-    live: "https://nail-boutique.netlify.app/",
-  },
-  {
     id: "surtfweb",
-    img: ["/images/surftweb.webp"],
+    img: [
+      "/images/surftweb1.webp",
+      "/images/surftweb2.webp",
+      "/images/surftweb3.webp",
+      "/images/surftweb4.webp",
+    ],
     title: "Surftweb",
     intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
+      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
     details:
       "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
     features: [
@@ -365,23 +392,6 @@ export const projectsData = [
       "Modular and reusable codebase that promotes maintainability and scalability",
     ],
     category: "REACTJS",
-    stack: ["React", "Styled-Components", "MUI"],
-    code: "https://github.com/ebokes/surftweb",
-    live: "https://surftweb.netlify.app/",
-  },
-  {
-    id: "crypto-tracker",
-    img: ["/images/crypto.webp"],
-    title: "Crypto Tracker",
-    intro:
-      "This is a vuejs application that allows users to search for and view GitHub profiles.",
-    details:
-      "Surftweb is a simple multiple page website that is a front for a web development company that renders digital products & services to small, medium and large scale businesses.",
-    features: [
-      "Responsive and user-friendly design that works across different devices and screen sizes",
-      "Modular and reusable codebase that promotes maintainability and scalability",
-    ],
-    category: "NEXTJS",
     stack: ["React", "Styled-Components", "MUI"],
     code: "https://github.com/ebokes/surftweb",
     live: "https://surftweb.netlify.app/",
@@ -481,43 +491,47 @@ export const TechStackData = [
     src: "framer-motion",
     caption: "Framer-Motion",
   },
+  {
+    src: "react-query",
+    caption: "React Query",
+  },
 ];
 
 export interface ReviewProps {
-  name: string;
-  position: string;
-  message: string;
+  name?: string;
+  position?: string;
+  message?: string;
   img?: string;
 }
 
 export const reviews = [
   {
-    name: "Jane Smith",
-    position: "UI/UX Designer",
-    message:
-      "Seamlessly blends Next.js, React, and TypeScript to create dynamic web apps. Impressive attention to detail and clean coding practices.",
-    img: "image_url_for_Jane_Smith",
-  },
-  {
-    name: "John Doe",
-    position: "Frontend Developer",
-    message:
-      "Translates design concepts into interactive interfaces. Valuable asset with commendable command over Next.js, React, and TypeScript.",
-    img: "image_url_for_John_Doe",
-  },
-  {
-    name: "Amanda Lee",
+    name: "Ifeanyi Okonkwo",
     position: "Senior Frontend Developer",
     message:
-      "Harnesses Next.js, React, and TypeScript for user-centric web apps. Evident potential and commitment to frontend excellence.",
-    img: "image_url_for_Amanda_Lee",
+      "I've had the privilege of working with Chibuokem as our dedicated frontend developer. His commitment to delivering pixel-perfect designs and seamless user experiences is exceptional. Chibuokem is a true asset to our team.",
+    img: "Ifeanyi Okonkwo",
   },
   {
-    name: "Mark Johnson",
-    position: "Freelance Frontend Developer",
+    name: "Folake Oladele",
+    position: "Backend Developer",
     message:
-      "Remarkable mastery of Next.js, React, and TypeScript. Reflects deep understanding and keen eye for detail.",
-    img: "image_url_for_Mark_Johnson",
+      "Chibuokem and I have partnered on multiple projects, and I'm consistently impressed with his frontend skills. His ability to bring designs to life is remarkable. Chibuokem pays great attention to detail and is a true collaborator.",
+    img: "Folake Oladele",
+  },
+  {
+    name: "Amina Bello",
+    position: "UI/UX Designer",
+    message:
+      "Chibuokem is an outstanding frontend developer. His coding skills are top-notch, and he has a keen eye for design. Collaborating with Chibuokem is always a pleasure.",
+    img: "Amina Bello",
+  },
+  {
+    name: "Emelder Okafor",
+    position: "Frontend Developer",
+    message:
+      "I've had the pleasure of working with Chibuokem for over 2 years, and his excellent skills, deep understanding of their field, and commitment to quality makes him a valuable asset. He's a top-notch team player with strong problem-solving abilities.",
+    img: "images/meldy.jpeg",
   },
 ];
 

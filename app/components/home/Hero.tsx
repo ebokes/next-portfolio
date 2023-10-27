@@ -8,21 +8,32 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import Typewriter from "typewriter-effect";
-import CoverImage from "../elements/CoverImage";
+import CoverImage from "../../utils/CoverImage";
+import Button from "@/app/utils/Button";
+import { motion } from "framer-motion";
+
+const MotionBox = motion(Flex);
 
 const Hero = () => {
   const { colorMode } = useColorMode();
   return (
     <CoverImage backgroundImg="backdrop3">
-      <Heading
-        as="h1"
-        fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
-        fontWeight="bold"
-        maxW={"500px"}
-        mb={2}
+      <MotionBox
+        width={"500px"}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
       >
-        Welcome to My Amazing Art Space!
-      </Heading>
+        <Heading
+          as="h1"
+          fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+          fontWeight="bold"
+          maxW={"500px"}
+          mb={2}
+        >
+          Welcome to My Amazing Art Space!
+        </Heading>
+      </MotionBox>
 
       <Flex mt={5} align={"center"}>
         <Text>{"<"}</Text>
@@ -48,26 +59,9 @@ const Hero = () => {
       </Flex>
       <Spacer h={2} />
       <Box my={5}>
-        <Link
-          href="#projects"
-          px={8}
-          py={3}
-          fontWeight="bold"
-          color={colorMode === "light" ? "brand.120" : "brand.620"}
-          fontSize={"12px"}
-          borderRadius={0}
-          bg={colorMode === "light" ? "brand.420" : "brand.400"}
-          boxShadow={"md"}
-          _hover={{
-            background: colorMode === "light" ? "brand.420" : "brand.400",
-            color: colorMode === "light" ? "white" : "brand.620",
-            transform: "translateY(-1px)",
-            boxShadow: "xl",
-            textDecoration: "none",
-          }}
-        >
+        <Button as={Link} href="#projects" fontSize="14px">
           EXPLORE NOW!
-        </Link>
+        </Button>
       </Box>
     </CoverImage>
   );

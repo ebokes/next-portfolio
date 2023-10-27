@@ -9,7 +9,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import Input from "../elements/Input";
+import Input from "../../utils/Input";
 import { input } from "@/app/utils/constants";
 import { send } from "@emailjs/browser";
 
@@ -96,7 +96,7 @@ const Contact = ({ onClose }: { onClose?: () => void }) => {
     });
   };
 
-  const inputLeftElementBg = colorMode === "light" ? "brand.220" : "brand.660";
+  const inputLeftElementBg = colorMode === "light" ? "brand.100" : "brand.620";
 
   const inputLeftElementBgColor = colorMode === "light" ? "brand.620" : "white";
 
@@ -139,7 +139,7 @@ const Contact = ({ onClose }: { onClose?: () => void }) => {
               />
             ))}
 
-            <Box>
+            <Box mb={10}>
               <Button
                 bg={colorMode === "light" ? "brand.420" : "brand.400"}
                 color={colorMode === "light" ? "white" : "brand.620"}

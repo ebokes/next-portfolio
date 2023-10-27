@@ -3,7 +3,7 @@
 import React from "react";
 import BodyWrap from "../components/nav/Nav";
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
-import BackButton from "../components/elements/BackButton";
+import BackButton from "../utils/BackButton";
 import { allProjectsData } from "../utils/constants";
 import Projects from "../components/home/Projects";
 
