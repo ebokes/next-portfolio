@@ -509,7 +509,7 @@ export const reviews = [
     name: "Ifeanyi Okonkwo",
     position: "Senior Frontend Developer",
     message:
-      "I've had the privilege of working with Chibuokem. His commitment to delivering pixel-perfect designs and seamless user experiences is exceptional. Chibuokem is a true asset to any team.",
+      "I've had the privilege of working with Chibuokem. His commitment to delivering pixel-perfect designs and seamless user experiences is exceptional. He is a true asset to any team.",
     img: "/images/ifeanyi.webp",
   },
   {
@@ -523,7 +523,7 @@ export const reviews = [
     name: "Amina Bello",
     position: "UI/UX Designer",
     message:
-      "Chibuokem is an outstanding frontend developer. His coding skills are top-notch, he has a keen eye for design and pays great attention to detail. Collaborating with Chibuokem is always a pleasure.",
+      "Chibuokem is an outstanding frontend developer. His coding skills are top-notch, he has a keen eye for design and pays great attention to detail. Collaborating with Him is always a pleasure.",
     img: "/images/amina.webp",
   },
   {

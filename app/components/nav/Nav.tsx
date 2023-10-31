@@ -25,7 +25,7 @@ const Nav = ({ children }: { children: React.ReactNode }) => {
       >
         <Leftbar isOpen={leftIsOpen} onClose={leftOnClose} />
         <Box
-          overflowY={"scroll"}
+          overflowY={"auto"}
           mr={{ base: "0", md: "70px", xl: "0" }}
           w={"full"}
         >

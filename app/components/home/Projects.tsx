@@ -4,6 +4,7 @@ import { ProjectDataProps, projectsData } from "@/app/utils/constants";
 import { Title } from "@/app/utils/reuseables";
 import {
   Flex,
+  HStack,
   List,
   ListItem,
   SimpleGrid,
@@ -13,12 +14,14 @@ import {
 import { useState } from "react";
 import ProjectCard from "../../utils/ProjectCard";
 import { Back } from "@/app/utils/BackButton";
+import { usePathname } from "next/navigation";
 
 interface ProjectsProps {
   data?: ProjectDataProps[];
 }
 
 const Projects: React.FC<ProjectsProps> = ({ data = projectsData }) => {
+  const path = usePathname();
   const [detailsStates, setDetailsStates] = useState<boolean[]>(
     Array(data?.length).fill(false)
   );
@@ -53,9 +56,10 @@ const Projects: React.FC<ProjectsProps> = ({ data = projectsData }) => {
   return (
     <>
       <Stack id="projects">
-        <Back>
+        <HStack spacing={2} w={"fit-content"} mb={"25px"}>
+          {path !== "/" && <Back />}
           <Title>My Projects</Title>
-        </Back>
+        </HStack>
         {/* <Flex > */}
         <List
           as={Flex}

@@ -15,7 +15,7 @@ const Footer = () => {
       boxShadow={"md"}
       mx={{ base: 0, md: "30px" }}
     >
-      <Text>© 2020 All Rights Reserved.</Text>
+      <Text>© 2023 All Rights Reserved.</Text>
       <Text>Chibuokem Egbuchulam</Text>
     </Flex>
   );

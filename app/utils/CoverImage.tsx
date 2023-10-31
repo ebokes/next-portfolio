@@ -7,11 +7,7 @@ interface CoverImageProps {
   backgroundImg: string;
 }
 
-const CoverImage: React.FC<CoverImageProps> = ({
-  children,
-  back,
-  backgroundImg,
-}) => {
+const CoverImage: React.FC<CoverImageProps> = ({ children, backgroundImg }) => {
   const { colorMode } = useColorMode();
   return (
     <Box
@@ -38,7 +34,7 @@ const CoverImage: React.FC<CoverImageProps> = ({
         backgroundPosition={"center"}
         backgroundRepeat={"no-repeat"}
         backgroundSize={"cover"}
-        p={"30px"}
+        p={{ base: 0, md: "30px" }}
         color={"white"}
       >
         {children}

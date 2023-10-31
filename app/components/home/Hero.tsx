@@ -1,3 +1,4 @@
+import Button from "@/app/utils/Button";
 import {
   Box,
   Flex,
@@ -8,10 +9,9 @@ import {
   useColorMode,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import CoverImage from "../../utils/CoverImage";
-import Button from "@/app/utils/Button";
-import { clamp, motion } from "framer-motion";
 
 const MotionBox = motion(Flex);
 
@@ -41,10 +41,7 @@ const Hero = () => {
       <Flex mt={5} style={{ flexDirection: isMobile ? "column" : "row" }}>
         <Flex>
           <Text fontSize={"18px"}>{"<"}</Text>
-          <Text
-            fontSize={"18px"}
-            color={colorMode === "light" ? "brand.420" : "brand.400"}
-          >
+          <Text color={colorMode === "light" ? "brand.420" : "brand.400"}>
             {"code"}
           </Text>
           <Text fontSize={"18px"}>{"> "}</Text>
@@ -53,7 +50,7 @@ const Hero = () => {
           <Typewriter
             options={{
               strings: [
-                " I build visually appealing websites",
+                "I build visually appealing websites",
                 "I create mobile-friendly, adaptable websites",
                 "I craft intuitive, visually appealing interfaces",
                 "I develop engaging user-driven applications",

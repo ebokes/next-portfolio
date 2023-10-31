@@ -9,7 +9,7 @@ const Reviews = () => {
       <Heading mb={"-10px"} fontSize={"17px"}>
         Recommendations
       </Heading>
-      <Carousel width={[35, 150, 450, 990]}>
+      <Carousel>
         {reviews.map((item) => (
           <ReviewCard
             key={item.name}

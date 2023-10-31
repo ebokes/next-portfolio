@@ -2,10 +2,6 @@
 
 import {
   Box,
-  Drawer,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerOverlay,
   Flex,
   HStack,
   IconButton,
@@ -13,7 +9,6 @@ import {
   Text,
   Tooltip,
   useColorMode,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -37,7 +32,12 @@ const Rightbar: React.FC = () => {
   return (
     <>
       {/* Desktop */}
-      <Box position={{ base: "fixed", xl: "static" }} right={"15px"} zIndex={5}>
+      <Box
+        position={{ base: "fixed", xl: "static" }}
+        right={"15px"}
+        zIndex={5}
+        h={"100vh"}
+      >
         <Flex
           bg={colorMode === "light" ? "white" : "brand.680"}
           justify={isOpen ? "flex-start" : "center"}

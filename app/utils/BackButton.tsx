@@ -1,21 +1,8 @@
-import {
-  Box,
-  Button,
-  Divider,
-  HStack,
-  Icon,
-  Text,
-  Tooltip,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Divider, HStack, Icon, Tooltip, useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { MdOutlineChevronLeft } from "react-icons/md";
 
-interface BackButtonProp {
-  children: React.ReactNode;
-}
-
-export const Back = ({ children }: BackButtonProp) => {
+export const Back = () => {
   const router = useRouter();
   const { colorMode } = useColorMode();
 
@@ -23,7 +10,7 @@ export const Back = ({ children }: BackButtonProp) => {
     router.back();
   };
   return (
-    <HStack mb="25px" align={"center"}>
+    <HStack align={"center"}>
       <Tooltip label="go back" openDelay={500}>
         <HStack
           color={colorMode === "light" ? "brand.420" : "brand.400"}
@@ -39,7 +26,6 @@ export const Back = ({ children }: BackButtonProp) => {
         height={"18px"}
         mr={"5px"}
       />
-      <Box>{children}</Box>
     </HStack>
   );
 };
