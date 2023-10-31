@@ -1,8 +1,11 @@
 "use client";
 
-import { servicesData } from "@/app/utils/constants";
 import {
-  Box,
+  cardsVariants,
+  parentVariants,
+  servicesData,
+} from "@/app/utils/constants";
+import {
   Flex,
   Grid,
   Heading,
@@ -12,15 +15,37 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const MotionFlex = motion(Flex);
 
 const Services = () => {
   const { colorMode } = useColorMode();
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  console.log(isInView);
+
+  if (isInView) {
+    controls.start("show");
+  }
+
   return (
     <Stack gap={"23px"} id="services">
       <Heading fontSize={"17px"}>My Services</Heading>
-      <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={7}>
+      <motion.div
+        className="grid-animation"
+        variants={parentVariants}
+        initial="hidden"
+        ref={ref}
+        animate={controls}
+        transition={{ duration: 1 }}
+      >
         {servicesData.map((item) => (
-          <Flex
+          <MotionFlex
+            variants={cardsVariants}
             key={item.id}
             bg={colorMode === "light" ? "white" : "brand.840"}
             p={8}
@@ -51,9 +76,9 @@ const Services = () => {
                 {item.body}
               </Text>
             </Flex>
-          </Flex>
+          </MotionFlex>
         ))}
-      </SimpleGrid>
+      </motion.div>
     </Stack>
   );
 };

@@ -32,6 +32,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import PulsatingCircle from "../../utils/PulsatingCircle";
+import { MdClose } from "react-icons/md";
 
 interface ProgressBarProps {
   value?: number;
@@ -93,6 +94,17 @@ const LeftContent = ({ onClose, h }: LeftbarProps) => {
         boxShadow={"xl"}
         position={"relative"}
       >
+        <IconButton
+          display={{ base: "flex", lg: "none" }}
+          variant={"ghost"}
+          _hover={{ background: "transparent" }}
+          aria-label="close btn"
+          icon={<MdClose />}
+          onClick={onClose}
+          position={"absolute"}
+          right={"10px"}
+          top={"10px"}
+        />
         {/* ID Card */}
         <Center
           flexDir={"column"}
@@ -228,6 +240,7 @@ const LeftContent = ({ onClose, h }: LeftbarProps) => {
           </Link>
         </Center>
       </Box>
+      {/* Avatar Popup */}
       <Modal isOpen={popIsOpen} onClose={popOnClose}>
         <ModalOverlay />
         <ModalContent>
@@ -236,8 +249,8 @@ const LeftContent = ({ onClose, h }: LeftbarProps) => {
             <Image
               src="/images/chibu-avatar.webp"
               alt="avatar image"
-              height={500}
-              width={500}
+              height={800}
+              width={800}
             />
           </ModalBody>
         </ModalContent>

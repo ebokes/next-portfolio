@@ -75,13 +75,13 @@ export const TechStack = [
 export const TechStack2 = [
   "Git & Github",
   "Netlify & Vercel",
-  "Firebase & Postman",
+  "Postman & Swagger",
   "Figma",
 ];
 
 export interface ProjectDataProps {
   id?: string;
-  img?: string[];
+  img?: string[] | undefined;
   title?: string;
   intro?: string;
   details?: string;
@@ -448,7 +448,7 @@ export const TechStackData = [
     caption: "TypeScript",
   },
   {
-    src: "nextjs",
+    src: "next",
     caption: "Nextjs",
   },
   {
@@ -509,28 +509,28 @@ export const reviews = [
     name: "Ifeanyi Okonkwo",
     position: "Senior Frontend Developer",
     message:
-      "I've had the privilege of working with Chibuokem as our dedicated frontend developer. His commitment to delivering pixel-perfect designs and seamless user experiences is exceptional. Chibuokem is a true asset to our team.",
-    img: "Ifeanyi Okonkwo",
+      "I've had the privilege of working with Chibuokem. His commitment to delivering pixel-perfect designs and seamless user experiences is exceptional. Chibuokem is a true asset to any team.",
+    img: "/images/ifeanyi.webp",
   },
   {
-    name: "Folake Oladele",
+    name: "Thompson Osagie",
     position: "Backend Developer",
     message:
-      "Chibuokem and I have partnered on multiple projects, and I'm consistently impressed with his frontend skills. His ability to bring designs to life is remarkable. Chibuokem pays great attention to detail and is a true collaborator.",
-    img: "Folake Oladele",
+      "Chibuokem and I have partnered on multiple projects, and I'm consistently impressed with his frontend skills. His ability to bring designs to life is remarkable. ",
+    img: "/images/thompson.webp",
   },
   {
     name: "Amina Bello",
     position: "UI/UX Designer",
     message:
-      "Chibuokem is an outstanding frontend developer. His coding skills are top-notch, and he has a keen eye for design. Collaborating with Chibuokem is always a pleasure.",
-    img: "Amina Bello",
+      "Chibuokem is an outstanding frontend developer. His coding skills are top-notch, he has a keen eye for design and pays great attention to detail. Collaborating with Chibuokem is always a pleasure.",
+    img: "/images/amina.webp",
   },
   {
     name: "Emelder Okafor",
     position: "Frontend Developer",
     message:
-      "I've had the pleasure of working with Chibuokem for over 2 years, and his excellent skills, deep understanding of their field, and commitment to quality makes him a valuable asset. He's a top-notch team player with strong problem-solving abilities.",
+      "I've had the pleasure of working with Chibuokem for over 2 years, his excellent skills, and commitment to quality makes him a valuable asset. He's a top-notch team player with strong problem-solving abilities.",
     img: "images/meldy.jpeg",
   },
 ];
@@ -557,3 +557,27 @@ export const input: InputProps[] = [
     type: "textarea", // Use "textarea" in lowercase
   },
 ];
+
+export const parentVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+export const cardsVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};

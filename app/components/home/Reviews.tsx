@@ -14,7 +14,7 @@ const Reviews = () => {
           <ReviewCard
             key={item.name}
             name={item.name}
-            // img={item.img}
+            img={item.img}
             position={item.position}
             message={item.message}
           />

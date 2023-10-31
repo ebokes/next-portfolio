@@ -129,3 +129,16 @@ body {
 .scrollBar_green:active::-webkit-scrollbar-thumb {
   background-color: #04c279;
 }
+.grid-animation {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* On small screens */
+  gap: 1.75rem; /* Adjust the spacing as needed */
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* On medium screens */
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr); /* On extra-large screens */
+  }
+}

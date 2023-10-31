@@ -1,46 +1,18 @@
 "use client";
 import {
-  Avatar,
   Box,
-  Button,
-  Center,
-  CloseButton,
-  Divider,
   Drawer,
   DrawerContent,
-  DrawerFooter,
   DrawerOverlay,
   Flex,
-  HStack,
-  Heading,
-  Icon,
   IconButton,
-  Link,
-  Modal,
-  ModalBody,
   ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Progress,
   Text,
   useColorMode,
-  useDisclosure,
 } from "@chakra-ui/react";
-import {
-  FaCheck,
-  FaDownload,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
-import { TechStack, TechStack2 } from "../../utils/constants";
-import PulsatingCircle from "../../utils/PulsatingCircle";
-import Image from "next/image";
-import { CgMaximize } from "react-icons/cg";
-import { useState } from "react";
 import LeftContent from "./LeftContent";
+import { MdClose } from "react-icons/md";
 // import PulsatingCircle from "../PulsatingCircle";
 
 interface ProgressBarProps {
@@ -88,7 +60,7 @@ const Leftbar: React.FC<LeftbarProps> = ({ isOpen, onClose }) => {
       {/* Mobile Leftbar */}
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent position={"relative"}>
           <LeftContent onClose={onClose} h={"95vh"} />
         </DrawerContent>
       </Drawer>

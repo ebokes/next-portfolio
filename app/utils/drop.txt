@@ -1,0 +1,161 @@
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  console.log(isInView);
+
+  if (isInView) {
+    controls.start({ opacity: 1, scale: 1 });
+  }
+
+  const MotionGrid = motion(SimpleGrid);
+
+   ref={ref}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={controls}
+        transition={{ duration: 1 }}
+
+
+
+
+
+
+const variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const images = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+//Parent
+ <motion.div
+variants={variants}
+initial="hidden"
+animate="show">
+  <motion.div variants={images}>
+    <img src={image} alt="image" />
+  </motion.div>
+  <motion.div variants={images}>
+    <img src={image} alt="image" />
+  </motion.div>
+  <motion.div variants={images}>
+    <img src={image} alt="image" />
+  </motion.div>
+
+
+  import { ProjectDataProps } from "@/app/utils/constants";
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import React from "react";
+import { BiChevronRight } from "react-icons/bi";
+
+interface ProjectCardProps {
+  item: ProjectDataProps;
+  detailsStates: boolean[];
+  handleMouseEnter: (index: number) => void;
+  handleMouseLeave: (index: number) => void;
+  variants: any;
+}
+
+const MotionBox = motion(Box);
+
+const ProjectCard = ({
+  detailsStates,
+  handleMouseEnter,
+  handleMouseLeave,
+  item,
+  variants,
+}: ProjectCardProps) => {
+  const { colorMode } = useColorMode();
+  return (
+    <MotionBox
+      variants={variants}
+      bg={colorMode === "light" ? "brand.140" : "brand.640"}
+    >
+      <Flex
+        bgImage={item?.img?.[0]}
+        backgroundPosition={"top"}
+        backgroundRepeat={"no-repeat"}
+        backgroundSize={"cover"}
+        onMouseEnter={() => handleMouseEnter(item?.id ? Number(item.id) : 0)}
+        onMouseLeave={() => handleMouseLeave(item?.id ? Number(item.id) : 0)}
+        h={"270px"}
+        position={"relative"}
+        overflow={"hidden"}
+        m={1}
+      >
+        <Box
+          bg={"#00000036"}
+          pos={"absolute"}
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          h={"full"}
+          w={"full"}
+        />
+        <Box
+          className={
+            detailsStates[item?.id ? Number(item.id) : 0]
+              ? "slide-in"
+              : "slide-down"
+          }
+          pos={"absolute"}
+          bottom={0}
+          bg={colorMode === "light" ? "brand.140" : "brand.640"}
+          w={"full"}
+          p={8}
+        >
+          <Flex flexDir={"column"} gap={4}>
+            <Heading fontSize={"14px"} fontWeight={600}>
+              {item?.title}
+            </Heading>
+            <Text
+              color={colorMode === "light" ? "brand.280" : "brand.780"}
+              fontSize={"13px"}
+            >
+              {item?.intro}
+            </Text>
+            <Link href={`/project/${item?.id}`}>
+              <HStack
+                color={colorMode === "light" ? "brand.420" : "brand.400"}
+                fontSize={"12px"}
+                fontWeight={600}
+              >
+                <Text>READ MORE</Text>
+                <BiChevronRight size={"19px"} />
+              </HStack>
+            </Link>
+          </Flex>
+        </Box>
+      </Flex>
+    </MotionBox>
+  );
+};
+
+export default ProjectCard;
