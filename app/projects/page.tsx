@@ -3,7 +3,7 @@
 import React from "react";
 import BodyWrap from "../components/nav/Nav";
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
-import BackButton from "../utils/BackButton";
+// import BackButton from "../utils/BackButton";
 import { allProjectsData } from "../utils/constants";
 import Projects from "../components/home/Projects";
 
@@ -21,7 +21,7 @@ const ProjectList = () => {
       >
         <BodyWrap>
           <Box maxW={"990px"} mx={{ base: "15px", md: "30px" }} my={6}>
-            <BackButton />
+            {/* <BackButton /> */}
             <Projects data={allProjectsData} />
           </Box>
         </BodyWrap>

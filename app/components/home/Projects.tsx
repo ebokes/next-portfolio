@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import ProjectCard from "../../utils/ProjectCard";
+import { Back } from "@/app/utils/BackButton";
 
 interface ProjectsProps {
   data?: ProjectDataProps[];
@@ -51,8 +52,10 @@ const Projects: React.FC<ProjectsProps> = ({ data = projectsData }) => {
 
   return (
     <>
-      <Stack gap={"23px"} id="projects">
-        <Title>My Projects</Title>
+      <Stack id="projects">
+        <Back>
+          <Title>My Projects</Title>
+        </Back>
         {/* <Flex > */}
         <List
           as={Flex}

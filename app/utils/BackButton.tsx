@@ -1,28 +1,45 @@
-import React from "react";
-import { IconButton, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  HStack,
+  Icon,
+  Text,
+  Tooltip,
+  useColorMode,
+} from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import { MdOutlineArrowBack } from "react-icons/md";
+import { MdOutlineChevronLeft } from "react-icons/md";
 
-const BackButton: React.FC = () => {
+interface BackButtonProp {
+  children: React.ReactNode;
+}
+
+export const Back = ({ children }: BackButtonProp) => {
   const router = useRouter();
   const { colorMode } = useColorMode();
 
-  const goBack = () => {
+  const handleClick = () => {
     router.back();
   };
-
   return (
-    <IconButton
-      aria-label="back"
-      icon={<MdOutlineArrowBack />}
-      borderColor={colorMode === "light" ? "brand.420" : "brand.400"}
-      variant={"outline"}
-      w={"50px"}
-      mb={6}
-      color={colorMode === "light" ? "brand.420" : "brand.400"}
-      onClick={goBack}
-    />
+    <HStack mb="25px" align={"center"}>
+      <Tooltip label="go back" openDelay={500}>
+        <HStack
+          color={colorMode === "light" ? "brand.420" : "brand.400"}
+          onClick={handleClick}
+          cursor={"pointer"}
+        >
+          <Icon as={MdOutlineChevronLeft} fontSize={"1.7rem"} />
+        </HStack>
+      </Tooltip>
+      <Divider
+        orientation="vertical"
+        borderColor={"brand.200"}
+        height={"18px"}
+        mr={"5px"}
+      />
+      <Box>{children}</Box>
+    </HStack>
   );
 };
-
-export default BackButton;

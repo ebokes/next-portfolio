@@ -1,6 +1,5 @@
 import { Box, useColorMode } from "@chakra-ui/react";
 import React from "react";
-import BackButton from "./BackButton";
 
 interface CoverImageProps {
   back?: boolean;
@@ -29,7 +28,6 @@ const CoverImage: React.FC<CoverImageProps> = ({
       backgroundRepeat={"no-repeat"}
       backgroundSize={"cover"}
     >
-      {back && <BackButton />}
       <Box
         style={{
           background:

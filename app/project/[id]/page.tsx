@@ -31,8 +31,8 @@ import { FaCheck } from "react-icons/fa";
 import { HiBadgeCheck, HiCode } from "react-icons/hi";
 import CoverImage from "@/app/utils/CoverImage";
 import Carousel from "@/app/utils/Carousel";
-import ReviewCard from "@/app/utils/ReviewCard";
 import Button from "@/app/utils/Button";
+import { Back } from "@/app/utils/BackButton";
 
 const Project = () => {
   const { id } = useParams();
@@ -40,7 +40,7 @@ const Project = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box>
+    <Box h={"100vh"}>
       <Nav>
         <>
           {projectsData.map((item) => {
@@ -49,11 +49,13 @@ const Project = () => {
                 <Flex key={item.id}>
                   <Box>
                     <CoverImage backgroundImg="collaborate" back={true}>
-                      <Box p={{ base: "15px", md: "30px" }} h={"full"}>
+                      <Box px={{ base: "15px", md: "30px" }} h={"full"}>
                         <Box>
-                          <Heading fontSize={"22px"} mb={"30px"}>
-                            {item.title}
-                          </Heading>
+                          <Flex>
+                            <Back>
+                              <Heading fontSize={"22px"}>{item.title}</Heading>
+                            </Back>
+                          </Flex>
                           <Carousel
                             //  width={[35, 50, 330, 870]}
                             width={[35, 150, 450, 990]}
