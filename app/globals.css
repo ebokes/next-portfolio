@@ -18,10 +18,10 @@ body {
 }
 
 .primary {
-  animation: primary 30s linear infinite;
+  animation: primary 60s linear infinite;
 }
 .secondary {
-  animation: secondary 30s linear infinite;
+  animation: secondary 60s linear infinite;
 }
 
 @keyframes primary {

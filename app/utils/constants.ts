@@ -56,11 +56,11 @@ export const TechStack = [
   },
   {
     title: "React.js",
-    value: 90,
+    value: 93,
   },
   {
     title: "Vue.js",
-    value: 80,
+    value: 60,
   },
   {
     title: "Typescript",
@@ -68,7 +68,7 @@ export const TechStack = [
   },
   {
     title: "Javascript",
-    value: 90,
+    value: 95,
   },
 ];
 
