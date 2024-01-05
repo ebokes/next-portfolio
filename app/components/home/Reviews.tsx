@@ -1,14 +1,15 @@
 import { reviews } from "@/app/utils/constants";
 import ReviewCard from "../../utils/ReviewCard";
 import Carousel from "../../utils/Carousel";
-import { Heading } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import { Title } from "@/app/utils/reuseables";
 
 const Reviews = () => {
   return (
-    <>
-      <Heading mb={"-10px"} fontSize={"17px"}>
+    <Box id="recommendations">
+      <Title mb={"30px"} fontSize={"17px"}>
         Recommendations
-      </Heading>
+      </Title>
       <Carousel>
         {reviews.map((item) => (
           <ReviewCard
@@ -20,7 +21,7 @@ const Reviews = () => {
           />
         ))}
       </Carousel>
-    </>
+    </Box>
   );
 };
 

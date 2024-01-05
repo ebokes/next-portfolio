@@ -12,7 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const delay = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
 
     return () => clearTimeout(delay);
   }, []);

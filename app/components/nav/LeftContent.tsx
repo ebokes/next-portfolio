@@ -164,6 +164,17 @@ const LeftContent = ({ onClose, h }: LeftbarProps) => {
           >
             Frontend Developer
           </Text>
+          <Center gap={4} w={"full"}>
+            <Link href="https://linkedin.com/in/chibuokemegbuchulam" isExternal>
+              <Icon as={FaLinkedin} boxSize={"17px"} />
+            </Link>
+            <Link href="https://github.com/ebokes" isExternal>
+              <Icon as={FaGithub} boxSize={"17px"} />
+            </Link>
+            <Link href="https://twitter.com/Chibu_91" isExternal>
+              <Icon as={FaTwitter} boxSize={"17px"} />
+            </Link>
+          </Center>
         </Center>
         <Box overflowY={"scroll"} h={"70vh"}>
           <Box p={"30px"} minW={"230px"}>
@@ -203,40 +214,33 @@ const LeftContent = ({ onClose, h }: LeftbarProps) => {
               my={"30px"}
               borderColor={colorMode === "light" ? "brand.260" : "brand.760"}
             />
-            <Center>
-              <Button
-                href="https://www.canva.com/design/DAFifIG9KsU/gRNEJIJacPKod90hfNADvg/view?utm_content=DAFifIG9KsU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
-                as={Link}
-                py={2}
-                px={"1rem"}
-                target="_blank"
-              >
-                <HStack>
-                  <Text>Download CV</Text>
-                  <Icon as={FaDownload} />
-                </HStack>
-              </Button>
-            </Center>
           </Box>
         </Box>
+
         <Center
-          // bg={"#252531"}
-          bg={colorMode === "light" ? "white" : "brand.680"}
           gap={4}
-          py={4}
+          py={2}
           position={"sticky"}
           bottom={"15px"}
           w={"full"}
           boxShadow={"lg"}
+          bg={colorMode === "light" ? "white" : "brand.680"}
         >
-          <Link href="https://linkedin.com/in/chibuokemegbuchulam" isExternal>
-            <Icon as={FaLinkedin} boxSize={"17px"} />
-          </Link>
-          <Link href="https://github.com/ebokes" isExternal>
-            <Icon as={FaGithub} boxSize={"17px"} />
-          </Link>
-          <Link href="https://twitter.com/Chibu_91" isExternal>
-            <Icon as={FaTwitter} boxSize={"17px"} />
+          <Link
+            href="https://www.canva.com/design/DAFifIG9KsU/gRNEJIJacPKod90hfNADvg/view?utm_content=DAFifIG9KsU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+            target="_blank"
+            rel="noopener noreferrer"
+            color={colorMode === "light" ? "brand.420" : "brand.400"}
+            _hover={{
+              textDecoration: "none",
+              bg: colorMode === "light" ? "brand.420" : "brand.400",
+              color: colorMode === "light" ? "white" : "brand.620",
+            }}
+          >
+            <HStack py={2} px={"1rem"}>
+              <Text>Download CV</Text>
+              <Icon as={FaDownload} />
+            </HStack>
           </Link>
         </Center>
       </Box>

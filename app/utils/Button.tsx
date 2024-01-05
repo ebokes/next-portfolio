@@ -14,6 +14,7 @@ interface ButtonProps {
   py?: number | string;
   type?: "submit" | "reset" | "button";
   onClick?: () => void;
+  mb?: number | string;
 }
 
 const Button = ({
@@ -27,6 +28,7 @@ const Button = ({
   py,
   type,
   onClick,
+  mb,
 }: ButtonProps) => {
   const { colorMode } = useColorMode();
   return (
@@ -52,6 +54,7 @@ const Button = ({
       type={type}
       cursor={"pointer"}
       onClick={onClick}
+      mb={mb}
     >
       {children}
     </Box>

@@ -34,7 +34,7 @@ const Hero = () => {
           mb={2}
           w={"fit-content"}
         >
-          Welcome to my world of web adventures!
+          Welcome to my Art Space!
         </Heading>
       </MotionBox>
 
@@ -70,7 +70,7 @@ const Hero = () => {
       </Flex>
       <Spacer h={2} />
       <Flex my={5} justify={isMobile ? "center" : "flex-start"}>
-        <Button as={Link} href="#projects" fontSize="14px">
+        <Button as={Link} href="/projects" fontSize="14px">
           EXPLORE NOW!
         </Button>
       </Flex>

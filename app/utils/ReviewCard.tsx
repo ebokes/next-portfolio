@@ -23,7 +23,7 @@ const ReviewCard: React.FC<ReviewProps> = ({
       mr={{ base: 0, md: 7 }}
       bg={colorMode === "light" ? "white" : "brand.840"}
       p={8}
-      minH={"260px"}
+      minH={"200px"}
     >
       <HStack justify={"space-between"}>
         <Box>

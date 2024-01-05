@@ -34,7 +34,8 @@ const CoverImage: React.FC<CoverImageProps> = ({ children, backgroundImg }) => {
         backgroundPosition={"center"}
         backgroundRepeat={"no-repeat"}
         backgroundSize={"cover"}
-        p={{ base: 0, md: "30px" }}
+        // px={{ base: 0, md: "30px" }}
+        p={"30px"}
         color={"white"}
       >
         {children}

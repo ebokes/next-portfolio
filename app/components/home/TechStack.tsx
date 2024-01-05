@@ -6,7 +6,7 @@ import Image from "next/image";
 const TechStacks = () => {
   const { colorMode } = useColorMode();
   return (
-    <Box>
+    <Box id="tech-stack">
       <Title mb={8}>My Tech Stack</Title>
       <Box
         overflow={"hidden"}
